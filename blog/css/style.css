@@ -1,0 +1,64 @@
+@import 'https://fonts.googleapis.com/css?family=Roboto+Mono';
+body{
+  font-family: 'Roboto Mono', monospace;
+}
+nav ul a,
+nav .brand-logo {
+  color: #fff;
+  transition: .01s all ease-in-out;
+}
+nav a:hover{
+  background-color: #50aef9;
+  transition: .01s all ease-in-out;
+}
+p {
+  line-height: 2rem;
+}
+
+.button-collapse {
+  color: #fff;
+}
+
+.parallax-container {
+  min-height: 380px;
+  line-height: 0;
+  height: auto;
+  color: rgba(255,255,255,.9);
+}
+  .parallax-container .section {
+    width: 100%;
+  }
+
+@media only screen and (max-width : 992px) {
+  .parallax-container .section {
+    position: absolute;
+    top: 40%;
+  }
+  #index-banner .section {
+    top: 10%;
+  }
+}
+
+@media only screen and (max-width : 600px) {
+  #index-banner .section {
+    top: 0;
+  }
+}
+
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+  font-size: inherit;
+}
+
+footer.page-footer {
+  margin: 0;
+}
+.card{
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  padding:1em;
+  transition: .2s all ease-in-out;
+}
+

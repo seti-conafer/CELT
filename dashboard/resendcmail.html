@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+  <link href="lcss/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>-->
+  <link href="lcss/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link rel="stylesheet" type="text/css" href="lcss/icon.css">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" />
+  <link href="//fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900&subset=latin,latin-ext" rel="stylesheet" />
+
+  <title>Resend Confirmation Mail | CELT</title>
+  <style>
+    .title{
+      font-size:1.7em;
+    }
+  </style>
+</head>
+
+  <body>
+    <div class="materialContainer">
+       <div class="box">
+         <div class="title">RESEND CONFIRMATION MAIL</div>
+           <div class="input">
+             <label for="name">Email</label>
+             <input type="text" name="name" id="name">
+             <span class="spin"></span>
+           </div>
+         <div class="button login" id="submit">
+             <button><span>SUBMIT</span> <i class="fa fa-check"></i></button>
+          </div>
+        </div>
+</div>
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/materialize.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+    $(document).ready(function() {
+     $("#submit").click(function() {
+       var email = $("#name").val();
+       if (email == '') {
+       alert("Please enter email id");
+       } else {
+       $.post("resendcmail.php", {
+       email1: email
+       }, function(data) {
+           if(data=='confirmation mail was sent to Registered email id.Confirm your mail'){
+              window.location="success.html";
+           }else{
+             alert(data);
+           }
+       });
+       }
+     });
+  });
+    </script>
+    <script type="text/javascript" src="js/jquery.tooltipster.min.js"></script>
+ </body>
+ </html>
